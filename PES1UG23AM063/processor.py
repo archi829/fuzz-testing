@@ -3,6 +3,9 @@ def sanitize_string(data):
     Removes special characters and trims the input.
     Assumes data is a non-empty string.
     """
+    if data is None:
+        return ""
+    
     data = data.strip()
     for ch in ['!', '@', '#', '$', '%']:
         data = data.replace(ch, '')
@@ -13,14 +16,26 @@ def parse_int_list(csv_string):
     Parses a CSV string of integers into a list of ints.
     Assumes valid comma-separated integer input.
     """
+    if csv_string is None:
+        return []
     parts = csv_string.split(',')
-    return [int(p) for p in parts]
+    
+    nums = []
+    for p in parts:
+        if p: # This skips empty strings like ''
+            try:
+                nums.append(int(p))
+            except ValueError:
+                continue
+    return nums
 
 def reverse_words(sentence):
     """
     Reverses each word in a sentence.
     Assumes sentence is non-empty and contains no punctuation.
     """
+    if sentence is None:
+        return ""
     words = sentence.split()
     reversed_words = [w[::-1] for w in words]
     return ' '.join(reversed_words)

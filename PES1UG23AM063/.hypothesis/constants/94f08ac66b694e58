@@ -1,0 +1,4 @@
+# file: C:\Users\Asus\Desktop\PESU\SE\lab\lab_6_fuzz_testing\fuzz-testing\PES1UG23AM063\processor.py
+# hypothesis_version: 6.141.1
+
+['!', '#', '$', '%', ',', '@', 'Parsed Integer List:', 'Sanitized String:', '__main__']
